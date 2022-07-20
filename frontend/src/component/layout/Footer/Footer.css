@@ -1,0 +1,109 @@
+footer{
+    margin-top: 10vmax;
+    padding:2vmax;
+    background-color: rgb(61, 54, 54);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.leftfooter{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leftfooter > h4 {
+    font-family: "Roboto";
+}
+
+.leftfooter > p{
+    text-align: center;
+    font-family: "Roboto", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.leftfooter >img {
+    width: 10vmax;
+    margin: 1vmax;
+    cursor:pointer;
+}
+
+.midFooter {
+    width: 60%;
+    text-align: center;
+}
+
+.midFooter > h1 {
+    font-size: 4vmax;
+    font-family: "Roboto", "Arial Narrow", Arial, sans-serif;
+    color: tomato;
+}
+
+.midFooter > p{
+    max-width: 60%;
+    margin: 1vmax auto;
+
+}
+
+
+.rightFooter {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rightFooter > h4 {
+    font-family: "Roboto", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.4vmax;
+    text-decoration: underline;
+}
+
+.rightFooter > a{
+    text-decoration: none;
+    
+    color:white;
+    margin: 0.5vmax;
+}
+
+
+.rightFooter > a {
+   
+    color: aqua;
+}
+
+.rightFooter > a:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    color: tomato;
+}
+
+
+.appIcons {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+.googlePlay, .appStore {
+    color: aqua;
+}
+
+.googlePlay:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    color: tomato;
+}
+
+.appStore:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    color: tomato;
+
+}
+
+@media screen and (max-width:600px) {
+    footer {
+        flex-direction: column;
+    }
+}
