@@ -1,6 +1,7 @@
 import React from 'react'
 import { Rating } from '@mui/material'
-import profilePng from "../../images/profilePng"
+import profilePng from "../../images/profile.png"
+
 const ReviewCard = ({review}) => {
     const options = {
      
