@@ -15,19 +15,14 @@ const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
   const {isLoading, error,  products, productsCount} = useSelector(state=>state.products)
-  const {error:userError} = useSelector(state=>state.user);
 
   useEffect(()=>{
     if (error){
-      alert.error(error);
-      dispatch(clearErrors());
-    }
-    if (userError){
       alert.error(userError);
       dispatch(clearUserErrors());
     }
     dispatch(getProduct())
-  }, [dispatch, error, alert, userError]);
+  }, [dispatch, error, alert]);
   return (
     <Fragment>
       {isLoading ? <Loading/>:<Fragment>

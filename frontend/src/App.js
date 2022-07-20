@@ -68,9 +68,7 @@ function App() {
     //wont let inspect
     // window.addEventListener("contextmenu", (e)=>e.preventDefault())
 
-    console.log("APPPPP")
-    console.log(window.location)
-  
+ 
     // if(window.location.pathname !== "/login"){
     if (window.location.pathname !== "/login"
     )
@@ -95,6 +93,7 @@ function App() {
           </Routes>
         </Elements>
       }
+
       <Routes>
         <Route exact path = "/" element = {<Home/>} />
         <Route exact path = "/products/product/:id" element = {<ProductDetail/>}/>
@@ -128,7 +127,7 @@ function App() {
         {isAuthenticated && user.role==="admin" && <Route exact path="/admin/user/:id" element = {<UpdateUser/>} />}
         {isAuthenticated && user.role==="admin" && <Route exact path="/admin/reviews" element = {<ProductReviews/>} />}
         
-        <Route path="*" element = {
+        <Route exact path="*" element = {
         <NotFound/>
         }/>
         
