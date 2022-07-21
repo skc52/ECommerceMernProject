@@ -84,7 +84,7 @@ function App() {
   return (
     <Router>
       <Header/>
-      
+      {isAuthenticated && <UserOptions user = {user}/>}
 
       <Routes>
         <Route exact path = "/" element = {<Home/>} />
@@ -119,13 +119,16 @@ function App() {
         {isAuthenticated && user.role==="admin" && <Route exact path="/admin/user/:id" element = {<UpdateUser/>} />}
         {isAuthenticated && user.role==="admin" && <Route exact path="/admin/reviews" element = {<ProductReviews/>} />}
         
-       
+        {window.location.pathname!=="/process/payment" &&
         <Route exact path="*" element = {
           <NotFound/>
           }/>
+        
+        }
+        
       </Routes>
 
-      {isAuthenticated && <UserOptions user = {user}/>}
+      
       {
           
         <Elements stripe = {loadStripe(stripeApiKey)}>
