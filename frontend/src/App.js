@@ -120,7 +120,9 @@ function App() {
         {isAuthenticated && user.role==="admin" && <Route exact path="/admin/reviews" element = {<ProductReviews/>} />}
         
        
-        
+        <Route exact path="*" element = {
+          <NotFound/>
+          }/>
       </Routes>
 
       {isAuthenticated && <UserOptions user = {user}/>}
@@ -134,11 +136,7 @@ function App() {
         </Elements>
       }
       
-      <Routes>
-        <Route exact path="*" element = {
-          <NotFound/>
-          }/>
-      </Routes>
+      
 
       
       <Footer/>
