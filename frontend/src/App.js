@@ -70,9 +70,10 @@ function App() {
 
  
     // if(window.location.pathname !== "/login"){
-    if (window.location.pathname !== "/login"
-    )
+    if (window.location.pathname !== "/login"){
       store.dispatch(loadUser())
+    }
+      
     // }
     
     getStripeApiKey();
@@ -83,16 +84,7 @@ function App() {
   return (
     <Router>
       <Header/>
-      {isAuthenticated && <UserOptions user = {user}/>}
-      {
-          
-        <Elements stripe = {loadStripe(stripeApiKey)}>
-          <Routes>
-            {<Route exact path = "/process/payment" element = {<Payment/>} />}
-
-          </Routes>
-        </Elements>
-      }
+      
 
       <Routes>
         <Route exact path = "/" element = {<Home/>} />
@@ -127,12 +119,27 @@ function App() {
         {isAuthenticated && user.role==="admin" && <Route exact path="/admin/user/:id" element = {<UpdateUser/>} />}
         {isAuthenticated && user.role==="admin" && <Route exact path="/admin/reviews" element = {<ProductReviews/>} />}
         
-        <Route exact path="*" element = {
-        <NotFound/>
-        }/>
+       
         
       </Routes>
+
+      {isAuthenticated && <UserOptions user = {user}/>}
+      {
+          
+        <Elements stripe = {loadStripe(stripeApiKey)}>
+          <Routes>
+            {<Route exact path = "/process/payment" element = {<Payment/>} />}
+
+          </Routes>
+        </Elements>
+      }
       
+      <Routes>
+        <Route exact path="*" element = {
+          <NotFound/>
+          }/>
+      </Routes>
+
       
       <Footer/>
     </Router>
